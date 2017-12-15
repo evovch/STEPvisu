@@ -1,5 +1,4 @@
-#ifndef CLS_CAMERA_H
-#define CLS_CAMERA_H
+#pragma once
 
 #ifdef _WIN32
 #pragma warning(push, 1)
@@ -101,5 +100,3 @@ public:
    glm::quat mQua;
 
 };
-
-#endif // CLS_CAMERA_H

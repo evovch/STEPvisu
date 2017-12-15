@@ -6,8 +6,7 @@
  * Здесь же приведён объект типа список сущностей - entity instance list.
  */
 
-#ifndef CLS_STEPFILE_H
-#define CLS_STEPFILE_H
+#pragma once
 
 #include <vector>
 #include <string>
@@ -62,11 +61,8 @@ private: // data members
     */
    bool mLinked;
 
-
    bool mBREPfilled;
 };
-
-#endif // CLS_STEPFILE_H
 
 //TODO Нужно сделать одну хеадер секцию и вектор дата секций и для каждой секции ввести свой список.
 // Пока предполагаем, что дата секция одна.

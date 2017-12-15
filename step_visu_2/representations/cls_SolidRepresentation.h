@@ -2,10 +2,9 @@
  * Áàçîâûé êëàññ äëÿ ãðàôè÷åñêîãî ïðåäñòàâëåíèÿ îáúåêòà.
  */
 
-#ifndef CLS_SOLIDREPRESENTATION_H
-#define CLS_SOLIDREPRESENTATION_H
+#pragma once
 
-#include "glew.h"
+#include "GL/glew.h"
 
 class cls_SolidRepresentation
 {
@@ -20,5 +19,3 @@ public:
 private:
 
 };
-
-#endif // CLS_SOLIDREPRESENTATION_H

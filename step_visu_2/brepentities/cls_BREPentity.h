@@ -2,8 +2,7 @@
  * (Абстрактный) класс для описания некой BREP сущности.
 */
 
-#ifndef CLS_BREPENTITY_H
-#define CLS_BREPENTITY_H
+#pragma once
 
 namespace nspBREP
 {
@@ -28,5 +27,3 @@ namespace nspBREP
 
    };
 }
-
-#endif // CLS_BREPENTITY_H

@@ -50,12 +50,12 @@ void cls_CEI::Link(const cls_EIlist* p_section)
    }
 }
 
-void cls_CEI::GenerateBrepLinks(const cls_EIlist* p_section)
+void cls_CEI::GenerateBrepLinks(const cls_EIlist* /*p_section*/)
 {
 
 }
 
-void cls_CEI::FillBrepLinks(const cls_EIlist* p_section)
+void cls_CEI::FillBrepLinks(const cls_EIlist* /*p_section*/)
 {
 
 }

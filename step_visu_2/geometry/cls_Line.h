@@ -3,8 +3,7 @@
  * 4.4.24 line
  */
 
-#ifndef CLS_LINE_H
-#define CLS_LINE_H
+#pragma once
 
 #include "cls_GeometryEntity.h"
 #include "cls_Cartesian_point.h"
@@ -36,5 +35,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_LINE_H

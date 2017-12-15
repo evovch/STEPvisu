@@ -3,8 +3,7 @@
 * 4.4.19 axis2_placement_3d
 */
 
-#ifndef CLS_AXIS2_PLACEMENT_3D_H
-#define CLS_AXIS2_PLACEMENT_3D_H
+#pragma once
 
 #include "cls_Placement.h"
 #include "cls_Direction.h"
@@ -26,5 +25,3 @@ namespace nspGeometry
       cls_Direction* mRefDir;
    };
 }
-
-#endif // CLS_AXIS2_PLACEMENT_3D_H

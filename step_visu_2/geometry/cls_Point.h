@@ -3,8 +3,7 @@
  * 4.4.3 point
  */
 
-#ifndef CLS_POINT_H
-#define CLS_POINT_H
+#pragma once
 
 #include "cls_GeometryEntity.h"
 
@@ -20,5 +19,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_POINT_H

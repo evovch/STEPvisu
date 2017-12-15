@@ -3,8 +3,7 @@
  * 4.4.14 direction
  */
 
-#ifndef CLS_DIRECTION_H
-#define CLS_DIRECTION_H
+#pragma once
 
 #include "cls_GeometryEntity.h"
 
@@ -33,5 +32,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_DIRECTION_H

@@ -2,9 +2,8 @@
  * Representation of an object using points.
  * Basically just an std::vector of cartesian points.
  */
- 
-#ifndef CLS_SOLIDREPRESENTATION_POINT_H
-#define CLS_SOLIDREPRESENTATION_POINT_H
+
+#pragma once
 
 #include <vector>
 
@@ -56,5 +55,3 @@ private:
 private:
    std::vector<nspGeometry::cls_Cartesian_point>& GetPoints();
 };
-
-#endif // CLS_SOLIDREPRESENTATION_POINT_H

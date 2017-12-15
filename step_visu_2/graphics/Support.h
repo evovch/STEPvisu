@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma warning(push, 1)
-#include "glew.h"
+#include "GL/glew.h"
 #pragma warning(pop)
 
 struct stc_VandC {

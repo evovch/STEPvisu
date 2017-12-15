@@ -2,8 +2,7 @@
  * Complex_entity_instance class. Does not have a name. CEI is a list of SEI in fact.
  */
 
-#ifndef CLS_CEI_H
-#define CLS_CEI_H
+#pragma once
 
 #include <vector>
 
@@ -40,6 +39,5 @@ public:
 
 private:
    std::vector<cls_SEI*> mSEIs;
-};
 
-#endif // CLS_CEI_H
+};

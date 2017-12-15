@@ -2,8 +2,7 @@
  * Представление геометрического объекта с помощью каркасных элементов - только рёбра.
  */
 
-#ifndef CLS_SOLIDREPRESENTATION_WIRE_H
-#define CLS_SOLIDREPRESENTATION_WIRE_H
+#pragma once
 
 #include "cls_SolidRepresentation.h"
 
@@ -18,5 +17,3 @@ public:
 private:
 
 };
-
-#endif // CLS_SOLIDREPRESENTATION_WIRE_H

@@ -3,8 +3,7 @@
  * 4.4.4 cartesian_point
  */
 
-#ifndef CLS_CARTESIAN_POINT_H
-#define CLS_CARTESIAN_POINT_H
+#pragma once
 
 #include "cls_Point.h"
 
@@ -33,5 +32,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_CARTESIAN_POINT_H

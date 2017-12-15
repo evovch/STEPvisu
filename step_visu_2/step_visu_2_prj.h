@@ -1,5 +1,4 @@
-#ifndef STEP_VISU_2_PRJ_H
-#define STEP_VISU_2_PRJ_H
+#pragma once
 
 #include <QtWidgets/QMainWindow>
 #include "ui_step_visu_2_prj.h"
@@ -27,5 +26,3 @@ private:
     cls_STEPfile* mSTEPfile;
 
 };
-
-#endif // STEP_VISU_2_PRJ_H

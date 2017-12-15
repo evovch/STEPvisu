@@ -2,8 +2,7 @@
  * Класс, представляющий параметр.
  */
 
-#ifndef CLS_PARAMETER_H
-#define CLS_PARAMETER_H
+#pragma once
 
 #include <string>
 
@@ -51,5 +50,3 @@ private: // data members
    cls_EI* mPointer;
 
 };
-
-#endif // CLS_PARAMETER_H

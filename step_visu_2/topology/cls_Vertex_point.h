@@ -3,8 +3,7 @@
  * 5.4.3 vertex_point
  */
 
-#ifndef CLS_VERTEX_POINT_H
-#define CLS_VERTEX_POINT_H
+#pragma once
 
 #include "cls_TopologyEntity.h"
 
@@ -25,5 +24,3 @@ namespace nspTopology
 
    };
 }
-
-#endif // CLS_VERTEX_POINT_H

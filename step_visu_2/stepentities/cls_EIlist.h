@@ -2,8 +2,7 @@
  * Данный класс хранит в себе список data сущностей - entity instance'ов.
  */
 
-#ifndef CLS_EILIST_H
-#define CLS_EILIST_H
+#pragma once
 
 #include <map>
 #include <string>
@@ -46,5 +45,3 @@ private:
    std::map<unsigned int, cls_EI*> mEIs;
 
 };
-
-#endif // CLS_EILIST_H

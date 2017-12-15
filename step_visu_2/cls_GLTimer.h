@@ -1,8 +1,7 @@
-#ifndef CLS_GLTIMER_H
-#define CLS_GLTIMER_H
+#pragma once
 
 #pragma warning(push, 1)
-#include "glew.h"
+#include "GL/glew.h"
 #pragma warning(pop)
 
 /**
@@ -42,5 +41,3 @@ public:
 	double FromStart(void);
 	double Stop(void);
 };
-
-#endif // CLS_GLTIMER_H

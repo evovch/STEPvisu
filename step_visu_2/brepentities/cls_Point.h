@@ -2,8 +2,7 @@
  * Класс геометрическая точка в декартовом пространстве.
  */
 
-#ifndef CLS_POINT_H
-#define CLS_POINT_H
+#pragma once
 
 #include "brepentities/cls_BREPentity.h"
 
@@ -27,5 +26,3 @@ namespace nspBREP
 
    };
 }
-
-#endif // CLS_POINT_H

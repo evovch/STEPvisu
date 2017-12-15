@@ -14,8 +14,7 @@
  * снизу дети (children), справа - следующий элемент (next)
  */
 
-#ifndef CLS_PARAMETERTREEELEMENT_H
-#define CLS_PARAMETERTREEELEMENT_H
+#pragma once
 
 #include <map>
 
@@ -96,5 +95,3 @@ private: // data members
    cls_ParameterTreeElement* mNext;
 
 };
-
-#endif // CLS_PARAMETERTREEELEMENT_H

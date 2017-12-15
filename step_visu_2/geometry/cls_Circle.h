@@ -3,8 +3,7 @@
  * 4.4.26 circle
  */
 
-#ifndef CLS_CIRCLE_H
-#define CLS_CIRCLE_H
+#pragma once
 
 #include "cls_GeometryEntity.h"
 #include "cls_Axis2_placement_3d.h"
@@ -36,5 +35,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_CIRCLE_H

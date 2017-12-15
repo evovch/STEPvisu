@@ -3,8 +3,7 @@
  * 4.4.16 placement
  */
 
-#ifndef CLS_PLACEMENT_H
-#define CLS_PLACEMENT_H
+#pragma once
 
 #include "cls_GeometryEntity.h"
 #include "cls_Cartesian_point.h"
@@ -32,5 +31,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_PLACEMENT_H

@@ -5,8 +5,7 @@
  * 
  */
 
-#ifndef CLS_SEI_H
-#define CLS_SEI_H
+#pragma once
 
 #include <string>
 #include <map>
@@ -112,5 +111,3 @@ private:
    nspGeometry::cls_GeometryEntity* mBREPentity;
 
 };
-
-#endif // CLS_SEI_H

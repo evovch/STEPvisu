@@ -4,8 +4,7 @@
  * Соответственно SEI и CEI наследуются от EI.
  */
 
-#ifndef CLS_EI_H
-#define CLS_EI_H
+#pragma once
 
 enum enu_EItype { etnSIMPLE=0, etnCOMPLEX=1 };
 
@@ -63,5 +62,3 @@ protected:
    unsigned int mN;
 
 };
-
-#endif // CLS_EI_H

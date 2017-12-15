@@ -76,7 +76,7 @@ void cls_SEI::Link(const cls_EIlist* p_section)
    }
 }
 
-void cls_SEI::GenerateBrepLinks(const cls_EIlist* p_section)
+void cls_SEI::GenerateBrepLinks(const cls_EIlist* /*p_section*/)
 {
    if (mName == "AXIS2_PLACEMENT_3D") {
       // Только создать
@@ -122,7 +122,7 @@ void cls_SEI::GenerateBrepLinks(const cls_EIlist* p_section)
 
 }
 
-void cls_SEI::FillBrepLinks(const cls_EIlist* p_section)
+void cls_SEI::FillBrepLinks(const cls_EIlist* /*p_section*/)
 {
    if (mName == "AXIS2_PLACEMENT_3D") {
       // Заполнить

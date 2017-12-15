@@ -3,8 +3,7 @@
  * 5.4 Topology entity definitions.
  */
 
-#ifndef CLS_TOPOLOGYENTITY_H
-#define CLS_TOPOLOGYENTITY_H
+#pragma once
 
 namespace nspTopology
 {
@@ -51,5 +50,3 @@ namespace nspTopology
    };
 
 }
-
-#endif // CLS_TOPOLOGYENTITY_H

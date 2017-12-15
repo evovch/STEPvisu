@@ -3,8 +3,7 @@
  * 4.4.15 vector
  */
 
-#ifndef CLS_VECTOR_H
-#define CLS_VECTOR_H
+#pragma once
 
 #include "cls_GeometryEntity.h"
 #include "cls_Direction.h"
@@ -37,5 +36,3 @@ namespace nspGeometry
 
    };
 }
-
-#endif // CLS_VECTOR_H

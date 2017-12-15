@@ -3,8 +3,7 @@
  * 4.4 Geometry entity definitions
  */
 
-#ifndef CLS_GEOMETRYENTITY_H
-#define CLS_GEOMETRYENTITY_H
+#pragma once
 
 namespace nspGeometry
 {
@@ -59,5 +58,3 @@ namespace nspGeometry
    };
 
 }
-
-#endif // CLS_GEOMETRYENTITY_H
