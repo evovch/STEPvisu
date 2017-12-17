@@ -28,8 +28,7 @@ wrapper'ы используются только в Windows.
 
 Build under Linux:
 
-qmake *.pro
-make
+./build.sh
 
 Prereq:
 flex, bison, glm

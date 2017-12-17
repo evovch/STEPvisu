@@ -293,7 +293,7 @@
      <x>0</x>
      <y>0</y>
      <width>605</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -312,15 +312,10 @@
   <customwidget>
    <class>cls_GraphicsWidget</class>
    <extends>QOpenGLWidget</extends>
-   <header>cls_GraphicsWidget.h</header>
-   <slots>
-    <slot>ZoomIn()</slot>
-   </slots>
+   <header>graphics/cls_GraphicsWidget.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="step_visu_2_prj.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>pbClear</sender>
@@ -447,22 +442,6 @@
     <hint type="destinationlabel">
      <x>127</x>
      <y>187</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pbZoomIn</sender>
-   <signal>clicked()</signal>
-   <receiver>openGLWidget</receiver>
-   <slot>ZoomIn()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>180</x>
-     <y>421</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>184</x>
-     <y>458</y>
     </hint>
    </hints>
   </connection>

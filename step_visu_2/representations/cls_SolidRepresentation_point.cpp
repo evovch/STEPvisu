@@ -1,7 +1,7 @@
 #include "cls_SolidRepresentation_point.h"
 
 #include "stepentities/cls_SEI.h"
-#include "Support.h"
+#include "graphics/Support.h"
 
 #include <iostream>
 

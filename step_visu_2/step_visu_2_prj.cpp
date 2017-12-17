@@ -18,7 +18,7 @@ STEP_visu_2_prj::STEP_visu_2_prj(QWidget *parent)
     mSTEPfile(nullptr)
 {
     ui.setupUi(this);
-    ui.pteFile->setPlainText("C:\\DEVELOPMENT\\Secret_STEP_files\\English_names\\1.stp");
+    ui.pteFile->setPlainText("/home/evovch/Documents/STEPvisu/Template_12.stp");
 }
 
 STEP_visu_2_prj::~STEP_visu_2_prj()
@@ -125,8 +125,6 @@ void STEP_visu_2_prj::ExtractPoints()
    std::vector<cls_SolidRepresentation_point*> v_pointRepresentations;
    v_pointRepresentations = mSTEPfile->ExtractPoints();
 
-   
-   
    //---------------------------------------------------------------------------------------
    
    // Build one representation for all solids

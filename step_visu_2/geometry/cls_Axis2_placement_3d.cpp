@@ -18,15 +18,12 @@ nspGeometry::cls_Axis2_placement_3d::cls_Axis2_placement_3d(cls_Direction* p_axi
 
 nspGeometry::cls_Axis2_placement_3d::~cls_Axis2_placement_3d()
 {
-
 }
 
-void nspGeometry::cls_Axis2_placement_3d::SetAxis(cls_Direction* p_axis)
+void nspGeometry::cls_Axis2_placement_3d::SetAxis(cls_Direction* /*p_axis*/)
 {
-
 }
 
-void nspGeometry::cls_Axis2_placement_3d::SetDirection(cls_Direction* p_dir)
+void nspGeometry::cls_Axis2_placement_3d::SetDirection(cls_Direction* /*p_dir*/)
 {
-
 }
