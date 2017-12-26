@@ -5,17 +5,17 @@
 
 #pragma once
 
-#include "cls_GeometryEntity.h"
+#include "cls_GeometryEntity.h" // mother class
 
 namespace nspGeometry
 {
-   class cls_Point : public cls_GeometryEntity
-   {
-   public:
-      cls_Point();
-      ~cls_Point();
+    class cls_Point : public cls_GeometryEntity
+    {
+    public:
+        cls_Point();
+        ~cls_Point();
 
-   private:
+    private:
 
-   };
-}
+    };
+} // End of namespace nspGeometry

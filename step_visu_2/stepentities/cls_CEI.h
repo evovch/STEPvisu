@@ -4,9 +4,10 @@
 
 #pragma once
 
-#include <vector>
+#include "cls_EI.h" // mother class
 
-#include "cls_EI.h" // Нужно инклюдить, т.к. это материнский класс
+// STL
+#include <vector>
 
 class cls_SEI;
 class cls_EIlist;
@@ -24,9 +25,9 @@ public:
    /**
     * Метод для выброса информации в командную строку. Полезно для debug'а.
     */
-   void Dump() const;
+   void Dump(void) const;
 
-   void Print() const;
+   void Print(void) const;
 
    /**
     * Этот метод проходит по всем параметрам сущности и подцепляет указатели на другие сущности из

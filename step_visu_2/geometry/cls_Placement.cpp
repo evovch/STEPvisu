@@ -1,29 +1,35 @@
 #include "cls_Placement.h"
 
-#include <iostream>
+// Qt
+#include <QDebug>
 
-nspGeometry::cls_Placement::cls_Placement() :
-   cls_GeometryEntity(etnPLACEMENT),
-   mPoint(nullptr)
+namespace nspGeometry
+{
+
+cls_Placement::cls_Placement() :
+    cls_GeometryEntity(etnPLACEMENT),
+    mPoint(nullptr)
 {
 }
 
-nspGeometry::cls_Placement::cls_Placement(cls_Cartesian_point* p_point) :
-   cls_GeometryEntity(etnPLACEMENT),
-   mPoint(p_point)
+cls_Placement::cls_Placement(cls_Cartesian_point* p_point) :
+    cls_GeometryEntity(etnPLACEMENT),
+    mPoint(p_point)
 {
 }
 
-nspGeometry::cls_Placement::~cls_Placement()
+cls_Placement::~cls_Placement()
 {
 }
 
-void nspGeometry::cls_Placement::Dump() const
+void cls_Placement::Dump(void) const
 {
-   std::cout << "[PLACEMENT] " << std::endl;
+    qDebug().nospace() << "[PLACEMENT] ";
 }
 
-void nspGeometry::cls_Placement::SetPoint(cls_Cartesian_point* p_point)
+void cls_Placement::SetPoint(cls_Cartesian_point* p_point)
 {
-   mPoint = p_point;
+    mPoint = p_point;
 }
+
+} // End of namespace nspGeometry

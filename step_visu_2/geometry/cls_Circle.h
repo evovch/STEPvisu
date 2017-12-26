@@ -5,7 +5,8 @@
 
 #pragma once
 
-#include "cls_GeometryEntity.h"
+#include "cls_GeometryEntity.h" // mother class
+
 #include "cls_Axis2_placement_3d.h"
 
 namespace nspGeometry
@@ -21,17 +22,17 @@ namespace nspGeometry
       /**
       * Метод для выброса информации в командную строку. Полезно для debug'а.
       */
-      void Dump() const;
+      void Dump(void) const;
 
       void SetPlacement(cls_Axis2_placement_3d* p_placement) { mPlacement = p_placement; }
       void SetRadius(double p_radius) { mRadius = p_radius; }
 
-      cls_Axis2_placement_3d* GetPlacement() const { return mPlacement; }
-      double GetRadius() const { return mRadius; }
+      cls_Axis2_placement_3d* GetPlacement(void) const { return mPlacement; }
+      double GetRadius(void) const { return mRadius; }
 
    private:
       cls_Axis2_placement_3d* mPlacement;
       double mRadius;
 
    };
-}
+} // End of namespace nspGeometry

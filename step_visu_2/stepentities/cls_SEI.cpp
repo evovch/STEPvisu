@@ -1,10 +1,11 @@
 ﻿#include "cls_SEI.h"
 
+// Qt
+#include <QDebug>
+
+// Project
 #include "cls_ParameterTreeElement.h"
 #include "cls_Parameter.h"
-
-#include <iostream>
-
 #include "geometry/cls_Cartesian_point.h"
 #include "geometry/cls_Direction.h"
 #include "geometry/cls_Vector.h"
@@ -13,21 +14,21 @@
 #include "geometry/cls_Axis2_placement_3d.h"
 
 cls_SEI::cls_SEI(const char* p_name) :
-   cls_EI(etnSIMPLE),
-	mParamList(nullptr),
-   mBREPentity(nullptr)
+    cls_EI(etnSIMPLE),
+    mParamList(nullptr),
+    mBREPentity(nullptr)
 {
-	std::string v_cppstring(p_name);
-	mName = v_cppstring;
+    std::string v_cppstring(p_name);
+    mName = v_cppstring;
 }
 
 cls_SEI::cls_SEI(unsigned int p_n, const char* p_name) :
-   cls_EI(etnSIMPLE, p_n),
-   mParamList(nullptr),
-   mBREPentity(nullptr)
+    cls_EI(etnSIMPLE, p_n),
+    mParamList(nullptr),
+    mBREPentity(nullptr)
 {
-	std::string v_cppstring(p_name);
-	mName = v_cppstring;
+    std::string v_cppstring(p_name);
+    mName = v_cppstring;
 }
 
 cls_SEI::~cls_SEI()
@@ -36,7 +37,7 @@ cls_SEI::~cls_SEI()
 
 void cls_SEI::SetN(const char* p_ninstr)
 {
-	mN = atoi(&p_ninstr[1]);
+    mN = atoi(&p_ninstr[1]);
 }
 
 std::string cls_SEI::GetName() const
@@ -53,27 +54,27 @@ std::string cls_SEI::GetFirstArgAsString() const
 
 void cls_SEI::SetParamList(cls_ParameterTreeElement* p_paramlist)
 {
-	mParamList = p_paramlist;
+    mParamList = p_paramlist;
 }
 
 void cls_SEI::Dump() const
 {
-   std::cout << "[SIMPLE_EI ] " << mN << "=" << mName << std::endl;
-   if (mParamList) {
-      mParamList->Dump();
-   }
+    qDebug().nospace() << "[SIMPLE_EI ] " << mN << "=" << mName.c_str();
+    if (mParamList) {
+        mParamList->Dump();
+    }
 }
 
 void cls_SEI::Print() const
 {
-   std::cout << "[SIMPLE_EI ] " << mN << "=" << mName << std::endl;
+    qDebug().nospace() << "[SIMPLE_EI ] " << mN << "=" << mName.c_str();
 }
 
 void cls_SEI::Link(const cls_EIlist* p_section)
 {
-   if (mParamList) {
-      mParamList->Link(p_section);
-   }
+    if (mParamList) {
+        mParamList->Link(p_section);
+    }
 }
 
 void cls_SEI::GenerateBrepLinks(const cls_EIlist* /*p_section*/)
@@ -180,16 +181,16 @@ void cls_SEI::FillBrepLinks(const cls_EIlist* /*p_section*/)
 
 std::map<unsigned int, cls_EI*> cls_SEI::GetNodesByName(std::string p_filter) const
 {
-   return mParamList->GetNodesByName(p_filter);
+    return mParamList->GetNodesByName(p_filter);
 }
 
 std::map<unsigned int, cls_EI*> cls_SEI::GetNodesByName(const char* p_filter) const
 {
-   std::string v_filtercpp(p_filter);
-   return this->GetNodesByName(v_filtercpp);
+    std::string v_filtercpp(p_filter);
+    return this->GetNodesByName(v_filtercpp);
 }
 
 nspGeometry::cls_GeometryEntity* cls_SEI::GetBREPentitiy()
 {
-   return mBREPentity;
+    return mBREPentity;
 }

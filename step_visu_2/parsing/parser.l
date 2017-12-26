@@ -14,9 +14,9 @@ int yyparse (cls_STEPfile*& myStepFile);        // declaration
 // yywrap is declared for us by LEX
 
 #ifdef _WIN32
-   #define STRDUP(...) _strdup(__VA_ARGS__)
+    #define STRDUP(...) _strdup(__VA_ARGS__)
 #else
-   #define STRDUP(...) strdup(__VA_ARGS__)
+    #define STRDUP(...) strdup(__VA_ARGS__)
 #endif
 
 %}
@@ -81,10 +81,10 @@ IN_STR                  {RUSLOWER}|{RUSUPPER}|{NON_Q_CHAR}|{APOSTROPHE}{APOSTROP
 // implementation
 void yyerror (cls_STEPfile*& /*myStepFile*/, char* str)
 {
-   printf ("ERROR: Could not parse: %s\n", str);
+    printf ("ERROR: Could not parse: %s\n", str);
 }
 
 int yywrap ()
 {
-	return 1;
+    return 1;
 }

@@ -5,11 +5,15 @@
 
 #pragma once
 
+#include "cls_SolidRepresentation.h" // mother class
+
+// STL
 #include <vector>
 
+// Qt
 #include <QTextStream>
 
-#include "cls_SolidRepresentation.h"
+// Project
 #include "geometry/cls_Cartesian_point.h"
 
 class cls_SEI;
@@ -38,7 +42,7 @@ public:
    /*
     * Iteratively Dump() each point in the representation.
     */
-   void Dump() const;
+   void Dump(void) const;
 
    /*
     * Dump current cls_SolidRepresentation_point object into an OBJ file.
@@ -46,12 +50,16 @@ public:
     */
    void DumpToObj(QTextStream& p_stream);
 
-   void SendToGPU(GLuint p_VAO, GLuint p_VBO) const;
-   void Draw(GLuint p_program, GLuint p_VAO) const;
+   // Reimplemented method of the mother class cls_SolidRepresentation
+   void SendToGPU(GLuint p_VAO, GLuint p_VBO) /*const*/;
 
-private:
+   // Reimplemented method of the mother class cls_SolidRepresentation
+   void Draw(GLuint p_program, GLuint p_VAO) /*const*/;
+
+private: // data members
    std::vector<nspGeometry::cls_Cartesian_point> mPoints;
 
-private:
-   std::vector<nspGeometry::cls_Cartesian_point>& GetPoints();
+private: // methods
+   const std::vector<nspGeometry::cls_Cartesian_point>& GetPoints(void) const;
+
 };

@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "cls_GeometryEntity.h"
+#include "cls_GeometryEntity.h" // mother class
 
 namespace nspGeometry
 {
@@ -19,11 +19,11 @@ namespace nspGeometry
       /**
        * Метод для выброса информации в командную строку. Полезно для debug'а.
        */
-      void Dump() const;
+      void Dump(void) const;
 
-      double GetX() const { return mX; }
-      double GetY() const { return mY; }
-      double GetZ() const { return mZ; }
+      double GetX(void) const { return mX; }
+      double GetY(void) const { return mY; }
+      double GetZ(void) const { return mZ; }
 
    private:
       double mX;
@@ -31,4 +31,4 @@ namespace nspGeometry
       double mZ;
 
    };
-}
+} // End of namespace nspGeometry

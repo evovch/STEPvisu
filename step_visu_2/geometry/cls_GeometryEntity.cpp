@@ -1,15 +1,19 @@
 #include "cls_GeometryEntity.h"
 
-nspGeometry::cls_GeometryEntity::cls_GeometryEntity() :
-   mType(etnUNSET)
+namespace nspGeometry {
+
+cls_GeometryEntity::cls_GeometryEntity() :
+    mType(etnUNSET)
 {
 }
 
-nspGeometry::cls_GeometryEntity::cls_GeometryEntity(enu_GeometryEntityType p_type) :
-   mType(p_type)
+cls_GeometryEntity::cls_GeometryEntity(enu_GeometryEntityType p_type) :
+    mType(p_type)
 {
 }
 
-nspGeometry::cls_GeometryEntity::~cls_GeometryEntity()
+cls_GeometryEntity::~cls_GeometryEntity(void)
 {
 }
+
+} // End of namespace nspGeometry

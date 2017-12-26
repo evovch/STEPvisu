@@ -7,15 +7,17 @@
 
 #pragma once
 
+#include "cls_EI.h" // mother class
+
+// STL
 #include <string>
 #include <map>
 
-#include "cls_EI.h" // Нужно инклюдить, т.к. это материнский класс
+// Project
+#include "geometry/cls_GeometryEntity.h"
 
 class cls_ParameterTreeElement;
 class cls_EIlist;
-
-#include "geometry/cls_GeometryEntity.h"
 
 class cls_SEI : public cls_EI
 {

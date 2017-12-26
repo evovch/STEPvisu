@@ -4,6 +4,7 @@
 
 #pragma once
 
+// STL
 #include <map>
 #include <string>
 
@@ -11,37 +12,40 @@ class cls_EI;
 
 class cls_EIlist
 {
-public:
-   cls_EIlist();
-   ~cls_EIlist();
+public: // methods
+    cls_EIlist();
+    ~cls_EIlist(void);
 
-   /**
+    /**
     * Добавить в список новую сущность.
     */
-   void AddEI(unsigned int p_n, cls_EI* p_ei);
+    void AddEI(unsigned int p_n, cls_EI* p_ei);
 
-   /**
+    /**
     * Метод для выброса информации в командную строку. Полезно для debug'а.
     */
-   void Dump() const;
+    void Dump(void) const;
 
-   void Link();
+    void Link(void);
 
-   void GenerateAndFillBrepLinks();
+    void GenerateAndFillBrepLinks(void);
 
-   cls_EI* GetEIbyN(unsigned int p_n) const;
+    cls_EI* GetEIbyN(unsigned int p_n) const;
 
-   /**
+    /**
     * Нати все сущности с заданным именем и вернуть нумерованным списком.
     */
-   std::map<unsigned int, cls_EI*> Find(std::string p_filter) const;
+    std::map<unsigned int, cls_EI*> Find(std::string p_filter) const;
 
-   /**
+    /**
     * Лишь обёртка над таким же методом с аргументов типа строка C++
     */
-   std::map<unsigned int, cls_EI*> Find(const char* p_filter) const;
+    std::map<unsigned int, cls_EI*> Find(const char* p_filter) const;
 
-private:
-   std::map<unsigned int, cls_EI*> mEIs;
+private: // data members
+    /**
+     * @brief mEIs
+     */
+    std::map<unsigned int, cls_EI*> mEIs;
 
 };

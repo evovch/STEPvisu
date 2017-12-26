@@ -26,24 +26,24 @@ public:
    /**
     * Стандартный деструктор.
     */
-   ~cls_EI();
+   ~cls_EI(void);
 
    /**
     * Возвращает тип сущности.
     */
-   enu_EItype GetType() const;
+   enu_EItype GetType(void) const { return mType; }
 
    /**
     * Возвращает номер сущности.
     */
-   unsigned int GetN() const;
+   unsigned int GetN(void) const { return mN; }
 
    /**
     * Метод для выброса информации в командную строку. Полезно для debug'а.
     */
-   virtual void Dump() const = 0;
+   virtual void Dump(void) const = 0;
 
-   virtual void Print() const = 0;
+   virtual void Print(void) const = 0;
 
    virtual void Link(const cls_EIlist* p_section) = 0;
 

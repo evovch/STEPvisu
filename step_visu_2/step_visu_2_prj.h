@@ -1,8 +1,10 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
+#include <QMainWindow> // mother class
+
 #include "ui_step_visu_2_prj.h"
-#include "stepentities/cls_STEPfile.h"
+
+class cls_STEPfile;
 
 class STEP_visu_2_prj : public QMainWindow
 {

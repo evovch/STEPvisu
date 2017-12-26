@@ -35,21 +35,21 @@ void cls_STEPfile::Dump() const
 void cls_STEPfile::Link()
 {
    std::cout << "Linking..." << std::endl;
-   cls_GLTimer v_timer;
-   v_timer.Start();
+   //cls_GLTimer v_timer;
+   //v_timer.Start();
    mEntityInstanceList->Link();
    mLinked = true;
-   std::cout << "Done linking. " << v_timer.Stop() << std::endl;
+   std::cout << "Done linking. " << std::endl; //<< v_timer.Stop() << std::endl;
 }
 
 void cls_STEPfile::GenerateAndFillBrepLinks()
 {
    std::cout << "Filling BREP links..." << std::endl;
-   cls_GLTimer v_timer;
-   v_timer.Start();
+   //cls_GLTimer v_timer;
+   //v_timer.Start();
    mEntityInstanceList->GenerateAndFillBrepLinks();
    mBREPfilled = true;
-   std::cout << "Done filling BREP links. " << v_timer.Stop() << std::endl;
+   std::cout << "Done filling BREP links. " << std::endl; // << v_timer.Stop() << std::endl;
 }
 
 std::vector<std::string> cls_STEPfile::ListByFilter(const char* p_filter)
@@ -62,8 +62,8 @@ std::vector<std::string> cls_STEPfile::ListByFilter(const char* p_filter)
 std::vector<std::string> cls_STEPfile::ListByFilter(std::string p_filter)
 {
    std::cout << "Listing by filter " << p_filter << "..." << std::endl;
-   cls_GLTimer v_timer;
-   v_timer.Start();
+//   cls_GLTimer v_timer;
+//   v_timer.Start();
    
    // Link if not yet linked
    if (!mLinked) this->Link();
@@ -76,7 +76,7 @@ std::vector<std::string> cls_STEPfile::ListByFilter(std::string p_filter)
    std::vector<std::string> v_NamesList;
    std::string v_formedString;
 
-   // Цикл по всем найенным сущностям типа PRODUCT.
+   // Цикл по всем найденным сущностям типа PRODUCT.
    std::map<unsigned int, cls_EI*>::iterator iterProducts;
    for (iterProducts = foundList.begin(); iterProducts != foundList.end(); ++iterProducts) {
 
@@ -92,7 +92,7 @@ std::vector<std::string> cls_STEPfile::ListByFilter(std::string p_filter)
       //std::cout << curFilteredSEI->GetN() << "=" << curFilteredSEI->GetName() << std::endl;
    }
 
-   std::cout << "Done listing by filter " << p_filter << ". " << v_timer.Stop() << std::endl;
+   std::cout << "Done listing by filter " << p_filter << ". " << std::endl; // << v_timer.Stop() << std::endl;
 
    return v_NamesList;
 }
@@ -107,11 +107,13 @@ std::vector<std::string> cls_STEPfile::ListProducts()
    return this->ListByFilter("PRODUCT");
 }
 
+// vector of points as return value
+//TODO check if this is efficient
 std::vector<cls_SolidRepresentation_point*> cls_STEPfile::ExtractPoints()
 {
    std::cout << "Extracting points..." << std::endl;
-   cls_GLTimer v_timer;
-   v_timer.Start();
+   //cls_GLTimer v_timer;
+   //v_timer.Start();
 
    // Link if not yet linked
    if (!mLinked) this->Link();
@@ -159,7 +161,7 @@ std::vector<cls_SolidRepresentation_point*> cls_STEPfile::ExtractPoints()
 
    }
 
-   std::cout << "Done extracting points. " << v_timer.Stop() << std::endl;
+   std::cout << "Done extracting points. " << std::endl; //<< v_timer.Stop() << std::endl;
 
    return v_listOfRepres;
 }

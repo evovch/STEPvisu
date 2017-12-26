@@ -50,7 +50,7 @@ void cls_GraphicsWidget::initializeGL()
 	glDepthFunc(GL_LEQUAL);
 	glDepthRange(0.0f, 1.0f);
 
-	glClearColor(1.0f, 1.0f, 0.0f, 1.0f);
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	glClearDepth(1.0f);
 
 	// Init the camera 
@@ -82,9 +82,10 @@ void cls_GraphicsWidget::paintGL()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//FIXME - not the best way. mModel has to initialised before the first call of this
-	// automatocally called function
+	//FIXME - not the best way. mModel has to initialized before the first call of this
+	// automatically called function
 	if (mModel) {
+		qDebug() << "cls_GraphicsWidget::paintGL()";
 		mModel->Draw(mWireframeDrawProgram, mVAOshading);
 	}
 }

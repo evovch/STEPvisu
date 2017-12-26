@@ -5,30 +5,30 @@
 
 #pragma once
 
-#include "cls_Point.h"
+#include "cls_Point.h" // mother class
 
 namespace nspGeometry
 {
-   class cls_Cartesian_point : public cls_Point
-   {
-   public:
-      cls_Cartesian_point();
-      cls_Cartesian_point(double p_x, double p_y, double p_z);
-      ~cls_Cartesian_point();
+    class cls_Cartesian_point : public cls_Point
+    {
+    public:
+        cls_Cartesian_point();
+        cls_Cartesian_point(double p_x, double p_y, double p_z);
+        ~cls_Cartesian_point();
 
-      /**
-       * Метод для выброса информации в командную строку. Полезно для debug'а.
-       */
-      void Dump() const;
+        /**
+        * Метод для выброса информации в командную строку. Полезно для debug'а.
+        */
+        void Dump(void) const;
 
-      double GetX() const { return mX; }
-      double GetY() const { return mY; }
-      double GetZ() const { return mZ; }
+        double GetX(void) const { return mX; }
+        double GetY(void) const { return mY; }
+        double GetZ(void) const { return mZ; }
 
-   private:
-      double mX;
-      double mY;
-      double mZ;
+    private:
+        double mX;
+        double mY;
+        double mZ;
 
-   };
-}
+    };
+} // End of namespace nspGeometry

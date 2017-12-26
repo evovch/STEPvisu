@@ -1,43 +1,45 @@
 ﻿#include "cls_Parameter.h"
 
-#include <iostream>
+// Qt
+#include <QDebug>
 
+// Project
 #include "cls_EIlist.h"
 
 cls_Parameter::cls_Parameter(std::string p_value) :
-	mValue(p_value),
-   mPointer(nullptr)
+    mValue(p_value),
+    mPointer(nullptr)
 {
 }
 
 cls_Parameter::cls_Parameter(const char* p_value) :
-   mPointer(nullptr)
+    mPointer(nullptr)
 {
-	std::string v_cppstring(p_value);
-	mValue = v_cppstring;
-	//std::cout << "Creating parameter from value " << p_value << ". size="<< mValue.size() << std::endl;
+    std::string v_cppstring(p_value);
+    mValue = v_cppstring;
+    //qDebug().nospace() << "Creating parameter from value " << p_value << ". size="<< mValue.size();
 }
 
-cls_Parameter::~cls_Parameter()
+cls_Parameter::~cls_Parameter(void)
 {
 }
 
-void cls_Parameter::Dump() const
+void cls_Parameter::Dump(void) const
 {
-	std::cout << "[PARAMETER] " << mValue << std::endl;
+    qDebug().nospace() << "[PARAMETER] " << mValue.c_str();
 }
 
 
 /* Компактненько */
-unsigned long cls_Parameter::GetValAsULong() const
+unsigned long cls_Parameter::GetValAsULong(void) const
 {   return std::stoul(mValue); }
-int cls_Parameter::GetValAsInt() const
+int cls_Parameter::GetValAsInt(void) const
 {   return std::stoi(mValue); }
-float cls_Parameter::GetValAsFloat() const
+float cls_Parameter::GetValAsFloat(void) const
 {   return std::stof(mValue); }
-double cls_Parameter::GetValAsDouble() const
+double cls_Parameter::GetValAsDouble(void) const
 {   return std::stod(mValue); }
-std::string cls_Parameter::GetValAsString() const
+std::string cls_Parameter::GetValAsString(void) const
 {   return mValue; }
 
 

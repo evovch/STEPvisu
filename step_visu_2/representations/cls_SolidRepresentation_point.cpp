@@ -1,9 +1,8 @@
 #include "cls_SolidRepresentation_point.h"
 
+// Project
 #include "stepentities/cls_SEI.h"
-#include "graphics/Support.h"
-
-#include <iostream>
+#include "support.h"
 
 cls_SolidRepresentation_point::cls_SolidRepresentation_point()
 {
@@ -32,12 +31,7 @@ void cls_SolidRepresentation_point::Append(cls_SolidRepresentation_point* v_adde
    }
 }
 
-std::vector<nspGeometry::cls_Cartesian_point>& cls_SolidRepresentation_point::GetPoints()
-{
-   return mPoints;
-}
-
-void cls_SolidRepresentation_point::Dump() const
+void cls_SolidRepresentation_point::Dump(void) const
 {
    std::vector<nspGeometry::cls_Cartesian_point>::const_iterator v_iter;
 
@@ -55,7 +49,7 @@ void cls_SolidRepresentation_point::DumpToObj(QTextStream& p_stream)
    }
 }
 
-void cls_SolidRepresentation_point::SendToGPU(GLuint p_VAO, GLuint p_VBO) const
+void cls_SolidRepresentation_point::SendToGPU(GLuint p_VAO, GLuint p_VBO) /*const*/
 {
    //TODO develop further and test
 
@@ -77,27 +71,32 @@ void cls_SolidRepresentation_point::SendToGPU(GLuint p_VAO, GLuint p_VBO) const
       i++;
    }
 
-   glBindVertexArray(p_VAO);
+   this->glBindVertexArray(p_VAO);
    {
-      glBindBuffer(GL_ARRAY_BUFFER, p_VBO);
-      glBufferData(GL_ARRAY_BUFFER, v_numOfPoints*sizeof(stc_VandC), v_VandCdataPointer, GL_STATIC_DRAW);
-      glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(stc_VandC), (void*)offsetof(stc_VandC, v));
-      glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(stc_VandC), (void*)offsetof(stc_VandC, c));
-      glEnableVertexAttribArray(0);
-      glEnableVertexAttribArray(1);
+      this->glBindBuffer(GL_ARRAY_BUFFER, p_VBO);
+      this->glBufferData(GL_ARRAY_BUFFER, v_numOfPoints*sizeof(stc_VandC), v_VandCdataPointer, GL_STATIC_DRAW);
+      this->glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(stc_VandC), (void*)offsetof(stc_VandC, v));
+      this->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(stc_VandC), (void*)offsetof(stc_VandC, c));
+      this->glEnableVertexAttribArray(0);
+      this->glEnableVertexAttribArray(1);
    }
-   glBindVertexArray(0);
+   this->glBindVertexArray(0);
 
    if (v_VandCdataPointer) delete [] v_VandCdataPointer;
 }
 
-void cls_SolidRepresentation_point::Draw(GLuint p_program, GLuint p_VAO) const
+void cls_SolidRepresentation_point::Draw(GLuint p_program, GLuint p_VAO) /*const*/
 {
    unsigned int v_numOfPoints = mPoints.size();
 
-   glUseProgram(p_program);
-   glBindVertexArray(p_VAO);
-   glDrawElements(GL_POINTS, v_numOfPoints/* * 3 */, GL_UNSIGNED_INT, NULL);
-   glBindVertexArray(0);
-   glUseProgram(0);
+   this->glUseProgram(p_program);
+   this->glBindVertexArray(p_VAO);
+   this->glDrawElements(GL_POINTS, v_numOfPoints/* * 3 */, GL_UNSIGNED_INT, NULL);
+   this->glBindVertexArray(0);
+   this->glUseProgram(0);
+}
+
+const std::vector<nspGeometry::cls_Cartesian_point>& cls_SolidRepresentation_point::GetPoints(void) const
+{
+   return mPoints;
 }

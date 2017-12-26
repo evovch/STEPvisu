@@ -8,9 +8,9 @@
 cls_ParameterTreeElement::cls_ParameterTreeElement(cls_Parameter* p_current,
                                                    cls_ParameterTreeElement* p_children,
                                                    cls_ParameterTreeElement* p_next) :
-	mCurrent(p_current),
-	mChildren(p_children),
-	mNext(p_next)
+    mCurrent(p_current),
+    mChildren(p_children),
+    mNext(p_next)
 {
 }
 
@@ -20,22 +20,22 @@ cls_ParameterTreeElement::~cls_ParameterTreeElement()
 
 cls_Parameter* cls_ParameterTreeElement::GetCurrent() const
 {
-	return mCurrent;
+    return mCurrent;
 }
 
 cls_ParameterTreeElement* cls_ParameterTreeElement::GetChildren() const
 {
-	return mChildren;
+    return mChildren;
 }
 
 void cls_ParameterTreeElement::SetNext(cls_ParameterTreeElement* p_next)
 {
-	mNext = p_next;
+    mNext = p_next;
 }
 
 cls_ParameterTreeElement* cls_ParameterTreeElement::GetNext() const
 {
-	return mNext;
+    return mNext;
 }
 
 cls_Parameter* cls_ParameterTreeElement::GetLast() const
@@ -52,27 +52,27 @@ cls_Parameter* cls_ParameterTreeElement::GetLast() const
 
 void cls_ParameterTreeElement::Dump() const
 {
-	if (mCurrent) mCurrent->Dump();
-	if (mChildren) mChildren->Dump();
-	if (mNext) mNext->Dump();
+    if (mCurrent) mCurrent->Dump();
+    if (mChildren) mChildren->Dump();
+    if (mNext) mNext->Dump();
 }
 
 void cls_ParameterTreeElement::Link(const cls_EIlist* p_section) const
 {
-	if (mCurrent) mCurrent->Link(p_section);
-	if (mChildren) mChildren->Link(p_section);
+    if (mCurrent) mCurrent->Link(p_section);
+    if (mChildren) mChildren->Link(p_section);
 
-   // Можно было бы реализовать рекурсивно в одну строку так:
-   // mNext->Link(p_section);
-   // но это приводит к ошибке переполнения стэка.
-   if (mNext) {
-      cls_ParameterTreeElement* v_next = mNext;
-      while (v_next != nullptr) {
-         if (v_next->GetCurrent()) v_next->GetCurrent()->Link(p_section);
-         if (v_next->GetChildren()) v_next->GetChildren()->Link(p_section);
-         v_next = v_next->GetNext();
-      }
-   }
+    // Можно было бы реализовать рекурсивно в одну строку так:
+    // mNext->Link(p_section);
+    // но это приводит к ошибке переполнения стэка.
+    if (mNext) {
+        cls_ParameterTreeElement* v_next = mNext;
+        while (v_next != nullptr) {
+            if (v_next->GetCurrent()) v_next->GetCurrent()->Link(p_section);
+            if (v_next->GetChildren()) v_next->GetChildren()->Link(p_section);
+            v_next = v_next->GetNext();
+        }
+    }
 }
 
 //TODO const?

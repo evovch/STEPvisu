@@ -1,8 +1,6 @@
 #pragma once
 
-#pragma warning(push, 1)
-#include "GL/glew.h"
-#pragma warning(pop)
+#include <QOpenGLFunctions_4_5_Core> // mother class
 
 /**
  * This is a primitive timer class which is using the OpenGL TIMESTAMP functionality.
@@ -25,19 +23,19 @@
  * timer.Stop();
  */
 
-class cls_GLTimer
+class cls_GLTimer : protected QOpenGLFunctions_4_5_Core
 {
 private:
-	GLint64 mTimerStart;
-	GLint64 mTimerIntermid;
+    GLint64 mTimerStart;
+    GLint64 mTimerIntermid;
 
 public:
-	cls_GLTimer(void);
-	~cls_GLTimer(void);
+    cls_GLTimer(void);
+    ~cls_GLTimer(void);
 
-	double Start(void);
-	double Milestone(void);
-	double MilestoneFromStart(void);
-	double FromStart(void);
-	double Stop(void);
+    double Start(void);
+    double Milestone(void);
+    double MilestoneFromStart(void);
+    double FromStart(void);
+    double Stop(void);
 };

@@ -17,10 +17,12 @@ void main()
 {
 	for (int i=0; i<3; i++)
 	{
-			  geom_Color = vertex_Color[i].xyz;					gl_Position = MVP * gl_in[i].gl_Position;
-		additional_Color = vertex_Color[i].xyz;		additional_Position = gl_Position.xyz / gl_Position.w;
+		geom_Color = vertex_Color[i].xyz;
+		gl_Position = MVP * gl_in[i].gl_Position;
+		additional_Color = vertex_Color[i].xyz;
+		additional_Position = gl_Position.xyz / gl_Position.w;
 		EmitVertex();
 	}
-	
+
 	EndPrimitive();
 }

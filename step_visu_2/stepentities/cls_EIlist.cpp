@@ -1,15 +1,14 @@
 ﻿#include "cls_EIlist.h"
 
+// Project
 #include "cls_SEI.h"
 #include "cls_CEI.h"
-
-#include <iostream>
 
 cls_EIlist::cls_EIlist()
 {
 }
 
-cls_EIlist::~cls_EIlist()
+cls_EIlist::~cls_EIlist(void)
 {
 }
 
@@ -18,18 +17,18 @@ void cls_EIlist::AddEI(unsigned int p_n, cls_EI* p_ei)
    mEIs.insert( std::pair<unsigned int, cls_EI*> (p_n, p_ei) );
 }
 
-void cls_EIlist::Dump() const
+void cls_EIlist::Dump(void) const
 {
    std::map<unsigned int, cls_EI*>::const_iterator iter;
 
    for (iter = mEIs.begin(); iter != mEIs.end(); ++iter)
    {
-	  (iter->second)->Dump();
+      (iter->second)->Dump();
    }
 
 }
 
-void cls_EIlist::Link()
+void cls_EIlist::Link(void)
 {
    std::map<unsigned int, cls_EI*>::const_iterator iter;
 
@@ -39,7 +38,7 @@ void cls_EIlist::Link()
    }
 }
 
-void cls_EIlist::GenerateAndFillBrepLinks()
+void cls_EIlist::GenerateAndFillBrepLinks(void)
 {
    //TODO check
    // Do it reversed - more efficiently ?
@@ -80,7 +79,7 @@ std::map<unsigned int, cls_EI*> cls_EIlist::Find(std::string p_filter) const
          // Здесь у нас уже есть SEI. Нужно посмотреть его имя и если оно подходит по фильтру,
          // записать объект в выходной список.
          if (v_curSEI->GetName() == p_filter) {
-            //std::cout << "Found " << p_filter << ". N=" << v_curSEI->GetN() << std::endl;
+            //qDebug().nospace() << "Found " << p_filter << ". N=" << v_curSEI->GetN();
             v_returnList.insert(std::pair<unsigned int, cls_EI*>(v_curSEI->GetN(), (v_iter->second)));
          }
 

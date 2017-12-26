@@ -20,7 +20,7 @@ nspGeometry::cls_Line::~cls_Line()
 {
 }
 
-void nspGeometry::cls_Line::Dump() const
+void nspGeometry::cls_Line::Dump(void) const
 {
    std::cout << "[LINE] " << std::endl;
 }

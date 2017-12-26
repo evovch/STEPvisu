@@ -13,7 +13,7 @@ SOURCES += \
     geometry/cls_Vector.cpp \
     graphics/cls_Camera.cpp \
     graphics/cls_GraphicsWidget.cpp \
-    graphics/Support.cpp \
+    support.cpp \
     parsing/wrapper-bison.cpp \
     parsing/wrapper-flex.cpp \
     representations/cls_SolidRepresentation.cpp \
@@ -43,7 +43,7 @@ HEADERS  += \
     geometry/cls_Vector.h \
     graphics/cls_Camera.h \
     graphics/cls_GraphicsWidget.h \
-    graphics/Support.h \
+    support.h \
     representations/cls_SolidRepresentation.h \
     representations/cls_SolidRepresentation_point.h \
     representations/cls_SolidRepresentation_wire.h \

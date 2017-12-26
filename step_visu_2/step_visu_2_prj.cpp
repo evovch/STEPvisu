@@ -1,14 +1,16 @@
 ﻿#include "step_visu_2_prj.h"
 
+// Qt
 #include <QString>
 #include <QFileDialog>
 #include <QFile>
 #include <QTextStream>
-#include <iostream>
+#include <QDebug>
 
+// Prokect
 #include "cls_GLTimer.h"
-
 #include "representations/cls_SolidRepresentation_point.h"
+#include "stepentities/cls_STEPfile.h"
 
 extern FILE* yyin;
 extern int yyparse(cls_STEPfile*& myStepFile);
@@ -50,13 +52,13 @@ unsigned int STEP_visu_2_prj::ParseFile()
       yyin = inFile;
       int res;
       ui.statusBar->showMessage("Parsing input file...");
-      std::cout << "Parsing input file..." << std::endl;
+      qDebug().nospace() << "Parsing input file...";
       cls_GLTimer v_timer;
       v_timer.Start();
 
       res = yyparse(mSTEPfile);
 
-      std::cout << "Done parsing input file. " << v_timer.Stop() << std::endl;
+      qDebug().nospace() << "Done parsing input file. " << v_timer.Stop();
 
       switch (res) {
       case 0: ui.statusBar->showMessage("Parsed input file."); break;

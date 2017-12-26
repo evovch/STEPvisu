@@ -1,9 +1,14 @@
 #include "cls_Point.h"
 
-nspGeometry::cls_Point::cls_Point()
+namespace nspGeometry
+{
+
+cls_Point::cls_Point()
 {
 }
 
-nspGeometry::cls_Point::~cls_Point()
+cls_Point::~cls_Point()
 {
 }
+
+} // End of namespace nspGeometry

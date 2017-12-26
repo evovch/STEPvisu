@@ -4,17 +4,17 @@
 
 #pragma once
 
-#include "GL/glew.h"
+#include <QOpenGLFunctions_4_5_Core> // mother class
 
-class cls_SolidRepresentation
+class cls_SolidRepresentation : protected QOpenGLFunctions_4_5_Core
 {
 public:
    cls_SolidRepresentation();
    ~cls_SolidRepresentation();
 
-   virtual void SendToGPU(GLuint p_VAO, GLuint p_VBO) const = 0;
+   virtual void SendToGPU(GLuint p_VAO, GLuint p_VBO) /*const*/ = 0;
 
-   virtual void Draw(GLuint p_program, GLuint p_VAO) const = 0;
+   virtual void Draw(GLuint p_program, GLuint p_VAO) /*const*/ = 0;
 
 private:
 

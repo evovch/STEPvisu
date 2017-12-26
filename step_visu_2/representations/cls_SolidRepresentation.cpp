@@ -7,3 +7,4 @@ cls_SolidRepresentation::cls_SolidRepresentation()
 cls_SolidRepresentation::~cls_SolidRepresentation()
 {
 }
+
