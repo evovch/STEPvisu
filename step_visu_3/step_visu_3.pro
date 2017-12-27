@@ -54,7 +54,6 @@ SOURCES += main.cpp \
            ../step_visu_2/geometry/cls_Placement.cpp \
            ../step_visu_2/geometry/cls_Point.cpp \
            ../step_visu_2/geometry/cls_Vector.cpp \
-           ../step_visu_2/cls_GLTimer.cpp \
            ../step_visu_2/representations/cls_SolidRepresentation.cpp \
            ../step_visu_2/representations/cls_SolidRepresentation_point.cpp \
            ../step_visu_2/representations/cls_SolidRepresentation_wire.cpp
@@ -80,7 +79,6 @@ HEADERS += cls_mainwindow.h \
            ../step_visu_2/geometry/cls_Placement.h \
            ../step_visu_2/geometry/cls_Point.h \
            ../step_visu_2/geometry/cls_Vector.h \
-           ../step_visu_2/cls_GLTimer.h \
            ../step_visu_2/representations/cls_SolidRepresentation.h \
            ../step_visu_2/representations/cls_SolidRepresentation_point.h \
            ../step_visu_2/representations/cls_SolidRepresentation_wire.h

@@ -6,7 +6,6 @@
 #include <QDebug>
 
 // Project
-#include "cls_GLTimer.h"
 #include "stepentities/cls_STEPfile.h"
 #include "representations/cls_SolidRepresentation_point.h"
 
@@ -44,12 +43,9 @@ void cls_MainWindow::on_actionOpen_triggered()
         ui->statusBar->showMessage("Parsing input file...");
         qDebug().nospace() << "Parsing input file...";
 
-        cls_GLTimer v_timer;
-        v_timer.Start();
-
         res = yyparse(mSTEPfile);
 
-        qDebug().nospace() << "Done parsing input file. " << v_timer.Stop();
+        qDebug().nospace() << "Done parsing input file.";
 
         switch (res) {
         case 0: ui->statusBar->showMessage("Parsed input file.");

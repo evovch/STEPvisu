@@ -1,12 +1,14 @@
 ﻿#include "cls_STEPfile.h"
 
-#include "cls_EIlist.h"
-#include "cls_SEI.h"
-
-#include "cls_GLTimer.h"
-
+// STL
 #include <map>
-#include <iostream>
+
+// Qt
+#include <QDebug>
+
+// Project
+#include "stepentities/cls_EIlist.h"
+#include "stepentities/cls_SEI.h"
 #include "representations/cls_SolidRepresentation_point.h"
 
 class cls_EI;
@@ -34,22 +36,18 @@ void cls_STEPfile::Dump() const
 
 void cls_STEPfile::Link()
 {
-   std::cout << "Linking..." << std::endl;
-   //cls_GLTimer v_timer;
-   //v_timer.Start();
+   qDebug().nospace() << "Linking...";
    mEntityInstanceList->Link();
    mLinked = true;
-   std::cout << "Done linking. " << std::endl; //<< v_timer.Stop() << std::endl;
+   qDebug().nospace() << "Done linking.";
 }
 
 void cls_STEPfile::GenerateAndFillBrepLinks()
 {
-   std::cout << "Filling BREP links..." << std::endl;
-   //cls_GLTimer v_timer;
-   //v_timer.Start();
+   qDebug().nospace() << "Filling BREP links...";
    mEntityInstanceList->GenerateAndFillBrepLinks();
    mBREPfilled = true;
-   std::cout << "Done filling BREP links. " << std::endl; // << v_timer.Stop() << std::endl;
+   qDebug().nospace() << "Done filling BREP links.";
 }
 
 std::vector<std::string> cls_STEPfile::ListByFilter(const char* p_filter)
@@ -61,9 +59,7 @@ std::vector<std::string> cls_STEPfile::ListByFilter(const char* p_filter)
 //FIXME нужно придумать, как избегать преобразования типа. Сейчас будут ошибки, если пытаться строить для CEI
 std::vector<std::string> cls_STEPfile::ListByFilter(std::string p_filter)
 {
-   std::cout << "Listing by filter " << p_filter << "..." << std::endl;
-//   cls_GLTimer v_timer;
-//   v_timer.Start();
+   qDebug().nospace() << "Listing by filter " << p_filter.c_str() << "...";
    
    // Link if not yet linked
    if (!mLinked) this->Link();
@@ -89,10 +85,10 @@ std::vector<std::string> cls_STEPfile::ListByFilter(std::string p_filter)
       v_formedString += ": ";
       v_formedString += curFilteredSEI->GetFirstArgAsString();
       v_NamesList.push_back(v_formedString);
-      //std::cout << curFilteredSEI->GetN() << "=" << curFilteredSEI->GetName() << std::endl;
+      //qDebug().nospace() << curFilteredSEI->GetN() << "=" << curFilteredSEI->GetName();
    }
 
-   std::cout << "Done listing by filter " << p_filter << ". " << std::endl; // << v_timer.Stop() << std::endl;
+   qDebug().nospace() << "Done listing by filter " << p_filter.c_str() << ".";
 
    return v_NamesList;
 }
@@ -111,9 +107,7 @@ std::vector<std::string> cls_STEPfile::ListProducts()
 //TODO check if this is efficient
 std::vector<cls_SolidRepresentation_point*> cls_STEPfile::ExtractPoints()
 {
-   std::cout << "Extracting points..." << std::endl;
-   //cls_GLTimer v_timer;
-   //v_timer.Start();
+   qDebug().nospace() << "Extracting points...";
 
    // Link if not yet linked
    if (!mLinked) this->Link();
@@ -140,7 +134,7 @@ std::vector<cls_SolidRepresentation_point*> cls_STEPfile::ExtractPoints()
    // Цикл по всем найенным сущностям типа MANIFOLD_SOLID_BREP.
    for (iterSolids = foundList.begin(); iterSolids != foundList.end(); ++iterSolids) {
       curSolidSEI = static_cast<cls_SEI*> (iterSolids->second);
-      ////std::cout << curSolidSEI->GetN() << "=" << curSolidSEI->GetName() << std::endl;
+      ////qDebug().nospace() << curSolidSEI->GetN() << "=" << curSolidSEI->GetName();
 
       cls_SolidRepresentation_point* v_curRepr = new cls_SolidRepresentation_point();
 
@@ -161,7 +155,7 @@ std::vector<cls_SolidRepresentation_point*> cls_STEPfile::ExtractPoints()
 
    }
 
-   std::cout << "Done extracting points. " << std::endl; //<< v_timer.Stop() << std::endl;
+   qDebug().nospace() << "Done extracting points.";
 
    return v_listOfRepres;
 }

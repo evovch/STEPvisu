@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QOpenGLFunctions_4_5_Core> // mother class
+#include "GL/glew.h"
 
 /**
  * This is a primitive timer class which is using the OpenGL TIMESTAMP functionality.
@@ -23,7 +23,7 @@
  * timer.Stop();
  */
 
-class cls_GLTimer : protected QOpenGLFunctions_4_5_Core
+class cls_GLTimer
 {
 private:
     GLint64 mTimerStart;

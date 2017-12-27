@@ -15,7 +15,7 @@ cls_GLTimer::~cls_GLTimer(void)
  */
 double cls_GLTimer::Start(void)
 {
-    this->glGetInteger64v(GL_TIMESTAMP, &mTimerStart);
+    glGetInteger64v(GL_TIMESTAMP, &mTimerStart);
     return (double)mTimerStart/1000000.0;
 }
 
@@ -25,7 +25,7 @@ double cls_GLTimer::Start(void)
 double cls_GLTimer::Stop(void)
 {
     if (!mTimerStart) return 0.;
-    this->glGetInteger64v(GL_TIMESTAMP, &mTimerIntermid);
+    glGetInteger64v(GL_TIMESTAMP, &mTimerIntermid);
     GLint64 res = mTimerIntermid - mTimerStart;
 
     mTimerStart = (GLint64)0;
@@ -44,7 +44,7 @@ double cls_GLTimer::Milestone(void)
     else prev = mTimerStart;
     if (!prev) return 0.;
 
-    this->glGetInteger64v(GL_TIMESTAMP, &mTimerIntermid);
+    glGetInteger64v(GL_TIMESTAMP, &mTimerIntermid);
     return (double)(mTimerIntermid - prev)/1000000.0;
 }
 
@@ -54,7 +54,7 @@ double cls_GLTimer::Milestone(void)
 double cls_GLTimer::MilestoneFromStart(void)
 {
     if (!mTimerStart) return 0.;
-    this->glGetInteger64v(GL_TIMESTAMP, &mTimerIntermid);
+    glGetInteger64v(GL_TIMESTAMP, &mTimerIntermid);
     return (double)(mTimerIntermid - mTimerStart)/1000000.0;
 }
 
@@ -65,6 +65,6 @@ double cls_GLTimer::FromStart(void)
 {
     if (!mTimerStart) return 0.;
     GLint64 cur;
-    this->glGetInteger64v(GL_TIMESTAMP, &cur);
+    glGetInteger64v(GL_TIMESTAMP, &cur);
     return (double)(cur - mTimerStart)/1000000.0;
 }

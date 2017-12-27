@@ -7,8 +7,7 @@
 #include <QTextStream>
 #include <QDebug>
 
-// Prokect
-#include "cls_GLTimer.h"
+// Project
 #include "representations/cls_SolidRepresentation_point.h"
 #include "stepentities/cls_STEPfile.h"
 
@@ -53,12 +52,10 @@ unsigned int STEP_visu_2_prj::ParseFile()
       int res;
       ui.statusBar->showMessage("Parsing input file...");
       qDebug().nospace() << "Parsing input file...";
-      cls_GLTimer v_timer;
-      v_timer.Start();
 
       res = yyparse(mSTEPfile);
 
-      qDebug().nospace() << "Done parsing input file. " << v_timer.Stop();
+      qDebug().nospace() << "Done parsing input file.";
 
       switch (res) {
       case 0: ui.statusBar->showMessage("Parsed input file."); break;
@@ -151,7 +148,6 @@ void STEP_visu_2_prj::ExtractPoints()
    ui.openGLWidget->SendRepresentationToGPU();
 
    //TODO
-   // Виталий!
    // Здесь v_pointRepresentations - вектор объектов типа представление солида с помощью точек.
    // Один элемент вектора - некий массив точек, он является простейшим графическим представлением тела.
    // см. класс cls_SolidRepresentation_point - просто вектор точек
