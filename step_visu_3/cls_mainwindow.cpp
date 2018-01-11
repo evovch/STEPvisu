@@ -7,7 +7,6 @@
 
 // Project
 #include "stepentities/cls_STEPfile.h"
-#include "representations/cls_SolidRepresentation_point.h"
 
 extern FILE* yyin;
 extern int yyparse(cls_STEPfile*& myStepFile);
@@ -68,12 +67,20 @@ void cls_MainWindow::on_actionOpen_triggered()
 
 void cls_MainWindow::on_actionPRODUCT_triggered()
 {
-    this->BuildSpecTree();
+    if (!mSTEPfile) {
+        qDebug() << "No file imported.";
+        return;
+    }
 
-    this->ExtractPoints();
+    mSTEPfile->Link();
+    mSTEPfile->GenerateAndFillBrepLinks();
+
+    //mSTEPfile->Dump();
+
+    this->BuildSpecTree();
 }
 
-void cls_MainWindow::BuildSpecTree(void)
+void cls_MainWindow::BuildProductsList(void)
 {
     std::string v_filter("PRODUCT");
     std::vector<std::string> v_listOfProducts;
@@ -86,46 +93,14 @@ void cls_MainWindow::BuildSpecTree(void)
        v_strCpp = *v_iter;
        v_strQt = QString(v_strCpp.c_str());
        qDebug().nospace() << v_strQt;
+
+       QTreeWidgetItem* curItem = new QTreeWidgetItem(ui->treeWidget);
+       curItem->setText(0, v_strQt);
     }
 }
 
-void cls_MainWindow::ExtractPoints(void)
+void cls_MainWindow::BuildSpecTree(void)
 {
-    //TODO here we try to generate the representation and show it in OpenGL.
-
-    ui->statusBar->showMessage("Extracting points...");
-    qDebug().nospace() << "Extracting points...";
-
-    // Build representations of separate solids
-    std::vector<cls_SolidRepresentation_point*> v_pointRepresentations;
-    v_pointRepresentations = mSTEPfile->ExtractPoints();
-
-    //---------------------------------------------------------------------------------------
-
-    // Build one representation for all solids
-    cls_SolidRepresentation_point* v_fullPointRepr = new cls_SolidRepresentation_point();
-    std::vector<cls_SolidRepresentation_point*>::iterator v_reprIter;
-    for (v_reprIter = v_pointRepresentations.begin(); v_reprIter != v_pointRepresentations.end(); ++v_reprIter) {
-       v_fullPointRepr->Append(*v_reprIter);
-    }
-
-    // Dump the single representation into the OBJ file
-/*    QFile v_tmpFile("tmp.obj");
-    if (v_tmpFile.open(QIODevice::ReadWrite))
-    {
-       QTextStream v_stream(&v_tmpFile);
-       v_fullPointRepr->DumpToObj(v_stream);
-    }
-*/
-    //---------------------------------------------------------------------------------------
-
-    // Send the v_fullPointRepr to GPU
-
-    //ui->openGLWidget->
-    //v_fullPointRepr->SendToGPU();
-
-    ui->statusBar->showMessage("Done extracting points.");
-    qDebug().nospace() << "Done extracting points...";
-
-    //v_fullPointRepr->Dump();
+    //mSTEPfile->FillTreeWidget(ui->treeWidget);
+    mSTEPfile->FillTreeWidgetBREP(ui->treeWidget);
 }

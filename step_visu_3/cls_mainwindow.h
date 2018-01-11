@@ -27,8 +27,9 @@ private:
 
     cls_STEPfile* mSTEPfile;
 
+    void BuildProductsList(void);
     void BuildSpecTree(void);
-    void ExtractPoints(void);
+
 };
 
 #endif // CLS_MAINWINDOW_H

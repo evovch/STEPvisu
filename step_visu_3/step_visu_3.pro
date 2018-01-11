@@ -30,60 +30,59 @@ LIBS += -lGLEW
 
 QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic
 
-INCLUDEPATH += ../step_visu_2/
-
 SOURCES += main.cpp \
            cls_mainwindow.cpp \
            cls_displaymodel.cpp \
            cls_mycamera.cpp \
            cls_myglwidget.cpp \
            support.cpp \
-           ../step_visu_2/stepentities/cls_CEI.cpp \
-           ../step_visu_2/stepentities/cls_EI.cpp \
-           ../step_visu_2/stepentities/cls_EIlist.cpp \
-           ../step_visu_2/stepentities/cls_Parameter.cpp \
-           ../step_visu_2/stepentities/cls_ParameterTreeElement.cpp \
-           ../step_visu_2/stepentities/cls_SEI.cpp \
-           ../step_visu_2/stepentities/cls_STEPfile.cpp \
-           ../step_visu_2/geometry/cls_Axis2_placement_3d.cpp \
-           ../step_visu_2/geometry/cls_Cartesian_point.cpp \
-           ../step_visu_2/geometry/cls_Circle.cpp \
-           ../step_visu_2/geometry/cls_Direction.cpp \
-           ../step_visu_2/geometry/cls_GeometryEntity.cpp \
-           ../step_visu_2/geometry/cls_Line.cpp \
-           ../step_visu_2/geometry/cls_Placement.cpp \
-           ../step_visu_2/geometry/cls_Point.cpp \
-           ../step_visu_2/geometry/cls_Vector.cpp \
-           ../step_visu_2/representations/cls_SolidRepresentation.cpp \
-           ../step_visu_2/representations/cls_SolidRepresentation_point.cpp \
-           ../step_visu_2/representations/cls_SolidRepresentation_wire.cpp
+           stepentities/cls_CEI.cpp \
+           stepentities/cls_EI.cpp \
+           stepentities/cls_EIlist.cpp \
+           stepentities/cls_Parameter.cpp \
+           stepentities/cls_ParameterTreeElement.cpp \
+           stepentities/cls_SEI.cpp \
+           stepentities/cls_STEPfile.cpp \
+           geometry/cls_Axis2_placement_3d.cpp \
+           geometry/cls_Cartesian_point.cpp \
+           geometry/cls_Circle.cpp \
+           geometry/cls_Direction.cpp \
+           geometry/cls_GeometryEntity.cpp \
+           geometry/cls_Line.cpp \
+           geometry/cls_Placement.cpp \
+           geometry/cls_Point.cpp \
+           geometry/cls_Vector.cpp \
+           representations/cls_SolidRepresentation.cpp \
+           representations/cls_SolidRepresentation_point.cpp \
+           representations/cls_SolidRepresentation_wire.cpp \
+    geometry/cls_Geometric_representation_item.cpp
 
 HEADERS += cls_mainwindow.h \
            cls_displaymodel.h \
            cls_mycamera.h \
            cls_myglwidget.h \
            support.h \
-           ../step_visu_2/stepentities/cls_CEI.h \
-           ../step_visu_2/stepentities/cls_EI.h \
-           ../step_visu_2/stepentities/cls_EIlist.h \
-           ../step_visu_2/stepentities/cls_Parameter.h \
-           ../step_visu_2/stepentities/cls_ParameterTreeElement.h \
-           ../step_visu_2/stepentities/cls_SEI.h \
-           ../step_visu_2/stepentities/cls_STEPfile.h \
-           ../step_visu_2/geometry/cls_Axis2_placement_3d.h \
-           ../step_visu_2/geometry/cls_Cartesian_point.h \
-           ../step_visu_2/geometry/cls_Circle.h \
-           ../step_visu_2/geometry/cls_Direction.h \
-           ../step_visu_2/geometry/cls_GeometryEntity.h \
-           ../step_visu_2/geometry/cls_Line.h \
-           ../step_visu_2/geometry/cls_Placement.h \
-           ../step_visu_2/geometry/cls_Point.h \
-           ../step_visu_2/geometry/cls_Vector.h \
-           ../step_visu_2/representations/cls_SolidRepresentation.h \
-           ../step_visu_2/representations/cls_SolidRepresentation_point.h \
-           ../step_visu_2/representations/cls_SolidRepresentation_wire.h
+           stepentities/cls_CEI.h \
+           stepentities/cls_EI.h \
+           stepentities/cls_EIlist.h \
+           stepentities/cls_Parameter.h \
+           stepentities/cls_ParameterTreeElement.h \
+           stepentities/cls_SEI.h \
+           stepentities/cls_STEPfile.h \
+           geometry/cls_Axis2_placement_3d.h \
+           geometry/cls_Cartesian_point.h \
+           geometry/cls_Circle.h \
+           geometry/cls_Direction.h \
+           geometry/cls_GeometryEntity.h \
+           geometry/cls_Line.h \
+           geometry/cls_Placement.h \
+           geometry/cls_Point.h \
+           geometry/cls_Vector.h \
+           representations/cls_SolidRepresentation.h \
+           representations/cls_SolidRepresentation_point.h \
+           representations/cls_SolidRepresentation_wire.h \
+    geometry/cls_Geometric_representation_item.h
 
 FORMS   += cls_mainwindow.ui
 
-DISTFILES += \
-    parsing.pri
+#DISTFILES += parsing.pri

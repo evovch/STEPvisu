@@ -1,7 +1,7 @@
 # Thx http://hipersayanx.blogspot.de/2013/03/using-flex-and-bison-with-qt.html
 
-FLEXSOURCE = ../step_visu_2/parsing/parser.l
-BISONSOURCE = ../step_visu_2/parsing/parser.y
+FLEXSOURCE = parsing/parser.l
+BISONSOURCE = parsing/parser.y
 
 OTHER_FILES += $$FLEXSOURCE \
                $$BISONSOURCE
